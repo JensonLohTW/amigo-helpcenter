@@ -1,0 +1,71 @@
+name: Deploy AMIGO Help Center to GitHub Pages
+
+# 觸發條件
+on:
+  # 推送到 main 分支時觸發
+  push:
+    branches: [ main, master ]
+  
+  # 手動觸發
+  workflow_dispatch:
+
+# 設置權限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 確保同時只有一個部署運行
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 構建作業
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 檢出代碼
+      uses: actions/checkout@v4
+      
+    - name: 設置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: 安裝依賴
+      run: npm ci
+      
+    - name: 設置環境變數
+      run: |
+        echo "GITHUB_PAGES=true" >> $GITHUB_ENV
+        echo "GITHUB_REPOSITORY=${{ github.repository }}" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_APP_NAME=AMIGO-HELPCENTER" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_APP_VERSION=1.0.0" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_APP_DESCRIPTION=AMIGO 自動販賣機後台系統操作手冊" >> $GITHUB_ENV
+        
+    - name: 運行代碼檢查
+      run: npm run lint
+      
+    - name: 構建項目
+      run: npm run build
+      
+    - name: 上傳構建產物
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./out
+
+  # 部署作業
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    - name: 部署到 GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

@@ -234,25 +234,40 @@ function NavigationGroup({
 
 export const navigation: Array<NavGroup> = [
   {
-    title: 'Guides',
+    title: '入門指南',
     links: [
-      { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
-      { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
+      { title: '首頁', href: '/' },
+      { title: '快速開始', href: '/quickstart' },
+      { title: '系統登入', href: '/authentication' },
+      { title: '介面導覽', href: '/navigation' },
     ],
   },
   {
-    title: 'Resources',
+    title: '核心功能',
     links: [
-      { title: 'Contacts', href: '/contacts' },
-      { title: 'Conversations', href: '/conversations' },
-      { title: 'Messages', href: '/messages' },
-      { title: 'Groups', href: '/groups' },
-      { title: 'Attachments', href: '/attachments' },
+      { title: '設備管理', href: '/equipment' },
+      { title: '商品管理', href: '/products' },
+      { title: '訂單管理', href: '/orders' },
+      { title: '財務報表', href: '/reports' },
+      { title: '庫存管理', href: '/inventory' },
+    ],
+  },
+  {
+    title: '進階功能',
+    links: [
+      { title: '數據分析', href: '/analytics' },
+      { title: '用戶管理', href: '/users' },
+      { title: '系統設定', href: '/settings' },
+      { title: '通知管理', href: '/notifications' },
+    ],
+  },
+  {
+    title: '支援與幫助',
+    links: [
+      { title: '常見問題', href: '/faq' },
+      { title: '故障排除', href: '/troubleshooting' },
+      { title: '聯繫支援', href: '/support' },
+      { title: '更新日誌', href: '/changelog' },
     ],
   },
 ]
@@ -261,9 +276,9 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">API</TopLevelNavItem>
-        <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Support</TopLevelNavItem>
+        <TopLevelNavItem href="/">操作手冊</TopLevelNavItem>
+        <TopLevelNavItem href="/quickstart">快速開始</TopLevelNavItem>
+        <TopLevelNavItem href="/support">技術支援</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
@@ -272,8 +287,8 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
           />
         ))}
         <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
-          <Button href="#" variant="filled" className="w-full">
-            Sign in
+          <Button href="/authentication" variant="filled" className="w-full">
+            系統登入
           </Button>
         </li>
       </ul>

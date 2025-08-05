@@ -1,12 +1,33 @@
 {
-  "name": "tailwind-plus-protocol",
-  "version": "0.1.0",
+  "name": "amigo-helpcenter",
+  "version": "1.0.0",
+  "description": "AMIGO 自動販賣機後台系統操作手冊展示平台",
+  "keywords": ["amigo", "help-center", "documentation", "vending-machine", "nextjs"],
+  "author": "AMIGO 開發團隊",
+  "license": "MIT",
+  "homepage": "https://github.com/AMIGO/amigo-helpcenter#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AMIGO/amigo-helpcenter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AMIGO/amigo-helpcenter/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next build",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "dev:script": "./scripts/dev.sh",
+    "build:script": "./scripts/build.sh",
+    "start:script": "./scripts/start.sh",
+    "deploy": "./scripts/deploy.sh",
+    "clean": "rm -rf .next out logs/*.log",
+    "preview": "cd out && python3 -m http.server 8000"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
