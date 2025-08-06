@@ -215,11 +215,6 @@ export default function SocialFloatingToolbar({ onToolSelect }: SocialFloatingTo
                     index === 6 ? '0 0 0 10px' :
                     index === 8 ? '0 0 10px 0' : '0'
 
-                  const CardWrapper = card.href ? Link : 'button'
-                  const cardProps = card.href 
-                    ? { href: card.href }
-                    : { onClick: card.onClick, type: 'button' as const }
-
                   return (
                     <motion.div
                       key={card.id}
@@ -246,72 +241,138 @@ export default function SocialFloatingToolbar({ onToolSelect }: SocialFloatingTo
                         }
                       }}
                     >
-                      <CardWrapper
-                        {...cardProps}
-                        className="group relative flex items-center justify-center w-full h-16 bg-gray-900/90 backdrop-blur-sm border border-gray-600/50 focus:outline-none focus:ring-2 focus:ring-white/50 dark:bg-gray-800/90 shadow-lg overflow-hidden"
-                        style={{ borderRadius }}
-                        onMouseEnter={() => setHoveredCard(card.id)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                        onClick={(e) => {
-                          e.stopPropagation() // 防止觸發父容器的點擊事件
-                          if (card.onClick) {
-                            card.onClick()
-                            setIsOpen(false) // 選擇工具後關閉菜單
-                          }
-                        }}
-                      >
-                        {/* 背景色過渡層 */}
-                        <motion.div
-                          className="absolute inset-0"
-                          initial={{ opacity: 0 }}
-                          animate={{
-                            opacity: hoveredCard === card.id ? 1 : 0,
-                            background: hoveredCard === card.id ? card.color : 'transparent',
-                          }}
-                          transition={{
-                            duration: 0.3,
-                            ease: [0.25, 0.46, 0.45, 0.94]
-                          }}
-                        />
-
-                        {/* 圖標容器 */}
-                        <motion.div
-                          className="relative z-10 flex items-center justify-center w-full h-full"
-                          animate={{
-                            scale: hoveredCard === card.id ? 1.1 : 1,
-                          }}
-                          transition={{
-                            type: 'spring',
-                            stiffness: 400,
-                            damping: 25
+                      {card.href ? (
+                        <Link
+                          href={card.href}
+                          className="group relative flex items-center justify-center w-full h-16 bg-gray-900/90 backdrop-blur-sm border border-gray-600/50 focus:outline-none focus:ring-2 focus:ring-white/50 dark:bg-gray-800/90 shadow-lg overflow-hidden"
+                          style={{ borderRadius }}
+                          onMouseEnter={() => setHoveredCard(card.id)}
+                          onMouseLeave={() => setHoveredCard(null)}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setIsOpen(false)
                           }}
                         >
+                          {/* 背景色過渡層 */}
                           <motion.div
+                            className="absolute inset-0"
+                            initial={{ opacity: 0 }}
                             animate={{
-                              rotate: hoveredCard === card.id ? [0, -5, 5, 0] : 0,
+                              opacity: hoveredCard === card.id ? 1 : 0,
+                              background: hoveredCard === card.id ? card.color : 'transparent',
                             }}
                             transition={{
-                              duration: 0.5,
-                              ease: 'easeInOut'
+                              duration: 0.3,
+                              ease: [0.25, 0.46, 0.45, 0.94]
+                            }}
+                          />
+
+                          {/* 圖標容器 */}
+                          <motion.div
+                            className="relative z-10 flex items-center justify-center w-full h-full"
+                            animate={{
+                              scale: hoveredCard === card.id ? 1.1 : 1,
+                            }}
+                            transition={{
+                              type: 'spring',
+                              stiffness: 400,
+                              damping: 25
                             }}
                           >
-                            <IconComponent className="w-6 h-6 text-white drop-shadow-lg filter" />
+                            <motion.div
+                              animate={{
+                                rotate: hoveredCard === card.id ? [0, -5, 5, 0] : 0,
+                              }}
+                              transition={{
+                                duration: 0.5,
+                                ease: 'easeInOut'
+                              }}
+                            >
+                              <IconComponent className="w-6 h-6 text-white drop-shadow-lg filter" />
+                            </motion.div>
                           </motion.div>
-                        </motion.div>
 
-                        {/* 光暈效果 */}
-                        <motion.div
-                          className="absolute inset-0 opacity-0"
-                          style={{
-                            background: `radial-gradient(circle at center, ${card.color}40 0%, transparent 70%)`,
+                          {/* 光暈效果 */}
+                          <motion.div
+                            className="absolute inset-0 opacity-0"
+                            style={{
+                              background: `radial-gradient(circle at center, ${card.color}40 0%, transparent 70%)`,
+                            }}
+                            animate={{
+                              opacity: hoveredCard === card.id ? 1 : 0,
+                              scale: hoveredCard === card.id ? 1.2 : 1,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </Link>
+                      ) : (
+                        <button
+                          type="button"
+                          className="group relative flex items-center justify-center w-full h-16 bg-gray-900/90 backdrop-blur-sm border border-gray-600/50 focus:outline-none focus:ring-2 focus:ring-white/50 dark:bg-gray-800/90 shadow-lg overflow-hidden"
+                          style={{ borderRadius }}
+                          onMouseEnter={() => setHoveredCard(card.id)}
+                          onMouseLeave={() => setHoveredCard(null)}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            if (card.onClick) {
+                              card.onClick()
+                              setIsOpen(false)
+                            }
                           }}
-                          animate={{
-                            opacity: hoveredCard === card.id ? 1 : 0,
-                            scale: hoveredCard === card.id ? 1.2 : 1,
-                          }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </CardWrapper>
+                        >
+                          {/* 背景色過渡層 */}
+                          <motion.div
+                            className="absolute inset-0"
+                            initial={{ opacity: 0 }}
+                            animate={{
+                              opacity: hoveredCard === card.id ? 1 : 0,
+                              background: hoveredCard === card.id ? card.color : 'transparent',
+                            }}
+                            transition={{
+                              duration: 0.3,
+                              ease: [0.25, 0.46, 0.45, 0.94]
+                            }}
+                          />
+
+                          {/* 圖標容器 */}
+                          <motion.div
+                            className="relative z-10 flex items-center justify-center w-full h-full"
+                            animate={{
+                              scale: hoveredCard === card.id ? 1.1 : 1,
+                            }}
+                            transition={{
+                              type: 'spring',
+                              stiffness: 400,
+                              damping: 25
+                            }}
+                          >
+                            <motion.div
+                              animate={{
+                                rotate: hoveredCard === card.id ? [0, -5, 5, 0] : 0,
+                              }}
+                              transition={{
+                                duration: 0.5,
+                                ease: 'easeInOut'
+                              }}
+                            >
+                              <IconComponent className="w-6 h-6 text-white drop-shadow-lg filter" />
+                            </motion.div>
+                          </motion.div>
+
+                          {/* 光暈效果 */}
+                          <motion.div
+                            className="absolute inset-0 opacity-0"
+                            style={{
+                              background: `radial-gradient(circle at center, ${card.color}40 0%, transparent 70%)`,
+                            }}
+                            animate={{
+                              opacity: hoveredCard === card.id ? 1 : 0,
+                              scale: hoveredCard === card.id ? 1.2 : 1,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </button>
+                      )}
                     </motion.div>
                   )
                 })}
