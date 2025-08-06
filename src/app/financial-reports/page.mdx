@@ -1,66 +1,99 @@
 export const metadata = {
-  title: '財務報表',
+  title: '財務與報表中心',
   description:
-    '全面的 AMIGO 自動販賣機財務分析，包括營收統計、成本分析、利潤報表等，幫助您做出明智的商業決策。',
+    'AMIGO 自動販賣機財務與報表中心，提供交易流水查詢、銷售數據報表、分潤結算等功能。部分功能需申請授權後使用。',
 }
 
-# 財務報表
+# 財務與報表中心
 
-全面的 AMIGO 自動販賣機財務分析，包括營收統計、成本分析、利潤報表等，幫助您做出明智的商業決策。
+財務與報表中心是您業務數據的核心樞紐，不僅是您的帳本，更是您洞察商機、優化經營的數據中心。這裡提供完整的交易記錄、銷售分析和財務報表功能。
+
+<Note>
+  **權限說明**：為協助代理商進行營運分析與業務規劃，若有銷售數據分析、商品策略規劃等需求，代理商得以正式提出申請，由總公司提供授權後之相關報表資料。資料僅限作為內部參考使用，並須遵守資訊安全與保密規範。
+</Note>
 
 ## 功能概覽
 
-財務報表模塊提供全面的財務分析工具：
+財務與報表中心提供以下核心功能：
 
-- **營收分析**：詳細的收入統計和趨勢分析
-- **成本控制**：全面的成本結構分析
-- **利潤評估**：準確的利潤計算和預測
-- **財務洞察**：基於數據的商業決策支援
+- **交易流水查詢**：詳細的交易記錄查詢和分析
+- **銷售數據報表**：全面的銷售統計和趨勢分析
+- **分潤與結算報表**：分潤計算和結算記錄
+- **熱銷商品分析**：商品銷售表現分析
+- **數據導出功能**：支援多種格式的數據導出
 
 ## 主要功能
 
-### 營收統計
+### 交易流水查詢
 
-全面分析您的營收表現：
+每一筆交易都會被詳細記錄在此。您可以根據時間、設備編號、訂單號、支付方式等多種條件，查詢到任何一筆交易的詳細資訊，便於對帳或處理客訴。
 
-- **總營收**：各時期的總收入統計
-- **營收趨勢**：收入變化趨勢分析
-- **收入來源**：不同商品和設備的收入貢獻
-- **支付方式分析**：各支付方式的收入分布
+**查詢功能特色**：
+- **多條件組合查詢**：可以自由組合多種查詢方式，快速定位訂單
+- **精確時間篩選**：支援按日期範圍、具體時間段查詢
+- **設備維度查詢**：按設備編號或設備名稱篩選交易
+- **支付方式篩選**：按現金、信用卡、行動支付等方式篩選
+- **訂單狀態篩選**：查看成功、失敗、退款等不同狀態的交易
+
+**交易詳情包含**：
+- **交易時間**：精確到秒的交易時間戳
+- **設備資訊**：設備編號、設備名稱、設備位置
+- **商品資訊**：商品名稱、數量、單價、總價
+- **支付資訊**：支付方式、支付狀態、支付流水號
+- **客戶資訊**：客戶聯絡方式（如有提供）
 
 <div className="not-prose">
   <Button href="/financial-reports/revenue" variant="text" arrow="right">
-    <>查看營收統計</>
+    <>查看交易流水</>
   </Button>
 </div>
 
-### 成本分析
+### 銷售數據報表
 
-深入了解您的成本結構：
+提供全面的銷售統計和分析功能，幫助您了解業務表現：
 
-- **商品成本**：各商品的採購和庫存成本
-- **運營成本**：設備維護、電費、租金等
-- **人力成本**：管理和維護人員成本
-- **成本趨勢**：成本變化趨勢和優化機會
+**報表功能**：
+- **銷售總覽**：總銷售額、訂單數量、商品數量統計
+- **時間趨勢分析**：日、週、月、年度銷售趨勢
+- **商品銷售排行**：熱銷商品和滯銷商品分析
+- **設備表現對比**：不同設備的銷售表現對比
+- **支付方式分析**：各種支付方式的使用情況
+
+**數據導出功能**：
+- 支援批量導出銷售數據
+- 多種格式選擇（Excel、CSV、PDF）
+- 自定義導出時間範圍和數據維度
+- 便於進一步分析和報告製作
 
 <div className="not-prose">
   <Button href="/financial-reports/costs" variant="text" arrow="right">
-    <>分析成本結構</>
+    <>查看銷售報表</>
   </Button>
 </div>
 
-### 利潤報表
+### 分潤與結算報表
 
-準確計算和分析利潤表現：
+提供詳細的分潤計算和結算記錄：
 
-- **毛利潤**：銷售收入減去商品成本
-- **淨利潤**：扣除所有成本後的最終利潤
-- **利潤率**：各項利潤率指標分析
-- **利潤預測**：基於歷史數據的利潤預測
+**分潤機制說明**：
+1. **公司管理**：商品補貨、清潔維護與售後由公司負責
+2. **銷售資料管理**：銷售資料由公司與銀行第三方雲發票系統管理
+3. **即時查詢**：加盟主透過後台網站即時查詢營收
+4. **月度結算**：每月由公司結算銷售淨利，依據主合同將利潤分潤匯入加盟主帳戶
+
+**結算報表功能**：
+- **結算週期查詢**：查看每個結算週期的具體起止日期
+- **分潤明細**：詳細的分潤計算過程和結果
+- **歷史結算記錄**：完整的歷史結算記錄查詢
+- **結算狀態追蹤**：了解結算處理進度和狀態
+
+<Tip>
+  **結算週期**：結算週期由您與總公司簽署的合作協議約定，通常為按月或按季結算。如有疑問，請參考您的合約或諮詢您的專屬客戶經理。
+</Tip>
 
 <div className="not-prose">
   <Button href="/financial-reports/profit" variant="text" arrow="right">
-    <>查看利潤報表</>
+    <>查看分潤結算</>
   </Button>
 </div>
 
@@ -206,6 +239,170 @@ export const metadata = {
 - **報表訂閱**：訂閱定期報表
 - **移動查看**：手機端查看報表
 
+---
+
+## 分潤與結算報表
+
+### 分潤機制說明
+
+<div className="not-prose mb-6">
+  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200 mb-3">AMIGO 分潤流程</h3>
+        <div className="space-y-4">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+            <div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">公司統一管理</h4>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                公司負責商品補貨、清潔維護與售後服務，確保設備正常運營。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+            <div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">銷售數據管理</h4>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                銷售資料由公司與銀行第三方雲發票系統統一管理，確保數據準確性。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+            <div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">即時查詢營收</h4>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                加盟主可透過後台網站即時查詢營收數據，掌握業務狀況。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+            <div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">定期結算分潤</h4>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                每月由公司結算銷售淨利，依據主合同約定比例將利潤分潤匯入加盟主帳戶。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 結算週期與查詢
+
+<div className="not-prose mb-6">
+  <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-green-600 dark:text-green-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-green-800 dark:text-green-200 mb-3">結算時程安排</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">標準結算週期</h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• <strong>月度結算</strong>：每月1-5日結算上月數據</li>
+              <li>• <strong>季度結算</strong>：每季度首月1-10日結算</li>
+              <li>• <strong>年度結算</strong>：每年1月進行年度總結算</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">查詢方式</h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• 登入後台系統查看即時數據</li>
+              <li>• 「財務中心」→「分潤與結算報表」</li>
+              <li>• 查看歷史結算記錄和明細</li>
+              <li>• 下載結算報表和憑證</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 報表申請流程
+
 <Note>
-  財務報表是業務決策的重要依據。建議定期檢視財務數據，及時發現問題和機會，持續優化經營策略。
+  **權限說明**：為協助代理商進行營運分析與業務規劃，若有銷售數據分析、商品策略規劃、招商引資方案等商業決策需求，代理商可正式提出申請，由總公司提供授權後的相關報表資料。
+</Note>
+
+<div className="not-prose mb-6">
+  <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-orange-600 dark:text-orange-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-orange-800 dark:text-orange-200 mb-3">可申請的報表類型</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">銷售報表</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 日/週/月銷售統計</li>
+              <li>• 商品銷售排行</li>
+              <li>• 時段銷售分析</li>
+              <li>• 設備效能比較</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">商品報表</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 商品銷售分析</li>
+              <li>• 熱銷商品統計</li>
+              <li>• 商品利潤分析</li>
+              <li>• 商品週轉率</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">庫存報表</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 庫存狀況統計</li>
+              <li>• 補貨需求分析</li>
+              <li>• 庫存週轉分析</li>
+              <li>• 缺貨預警報告</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-4 p-4 bg-orange-100 dark:bg-orange-800 rounded-lg">
+          <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">申請流程</h4>
+          <ol className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+            <li>1. 透過指定聯絡窗口提交申請</li>
+            <li>2. 說明報表用途及所需範圍</li>
+            <li>3. 等待總公司審核與授權</li>
+            <li>4. 獲得授權後提供相關報表</li>
+          </ol>
+          <p className="text-xs text-orange-700 dark:text-orange-300 mt-2">
+            <strong>注意：</strong>資料僅限作為內部參考使用，並須遵守資訊安全與保密規範。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<Note>
+  財務報表是業務決策的重要依據。建議定期檢視財務數據，及時發現問題和機會，持續優化經營策略。如有分潤結算相關問題，請聯繫您的專屬客戶經理。
 </Note>

@@ -1,0 +1,153 @@
+export const metadata = {
+  title: '儀表板介紹',
+  description:
+    'AMIGO 自動販賣機後台系統儀表板詳細介紹，包括全域導覽列、左側導覽選單、主內容區等各區塊功能說明，幫助您快速掌握系統操作。',
+}
+
+# 儀表板核心數據解讀
+
+成功登入後，您將進入系統的儀表板（Dashboard）。這裡是您每日工作的起點，也是整個業務版圖的縮影，旨在讓您在最短時間內掌握核心經營動態。
+
+Home頁面主要分為全域導覽列、側邊導覽、主內容區三大區塊。各區塊之間採卡片式設計，重點資訊一目了然，適合直覺操作。
+
+<EnhancedImage
+  src="pages/getting-started/dashboard-overview.jpg"
+  alt="AMIGO 後台系統儀表板總覽"
+  width={800}
+  height={500}
+  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+  caption="儀表板主介面包含全域導覽列、左側選單和主內容區"
+  enableZoom={true}
+  enableDownload={true}
+  enableFullscreen={true}
+/>
+
+## 全域導覽列
+
+| 區塊 | 功能簡述 | 操作路徑 |
+|------|----------|----------|
+| 系統名稱 & 左側導覽選單 | 左上角顯示系統名稱 Vending Machine；點擊左側選單圖示「≡」可展開或收合左側導覽選單。 | 任一頁面→點擊漢堡圖示 |
+| 頁面標籤 | 呈現目前所在層級頁面（例：首頁）；有助於快速切換頁面與回到上一層。 | 點擊頁面標籤切換頁面 |
+| 功能快捷區 | 右上角含「列印」圖示（匯出報表）與「語言切換」下拉；支援中/英多語介面。 | 右上→依需求點擊 |
+| 使用者帳號 | 顯示目前登入帳號；點擊可登出或切換角色權限。 | 右上帳號下拉 |
+
+## 左側導覽選單
+
+**訂單管理**：這是您當前主要可使用的功能模塊
+- **首頁**：即您當前所在的儀表板頁面
+- **訂單列表**：用於查詢、管理所有歷史訂單
+
+**展開、收合**：預設為窄版圖示顯示；點擊左側選單圖示「≡」即可切換全名顯示，適合在不同螢幕寬度下操作。
+
+<EnhancedImage
+  src="pages/order-management/order-navigation.jpg"
+  alt="訂單管理導航選單"
+  width={300}
+  height={200}
+  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+  caption="左側導航選單中的訂單管理功能"
+  enableZoom={true}
+  enableDownload={true}
+  enableFullscreen={true}
+/>
+
+<Note>
+  **權限說明**：為確保系統穩定運行與使用者操作一致性，目前加盟主帳號預設僅開放「首頁」和「訂單管理」功能模組。其他模組功能將視實際業務需求與系統研發進度，採階段性逐步開放。
+</Note>
+
+## 主內容區
+
+### 實時概況卡
+
+<EnhancedImage
+  src="pages/getting-started/dashboard-stats-card.jpg"
+  alt="儀表板實時概況卡"
+  width={800}
+  height={300}
+  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+  caption="實時概況卡顯示設備狀態、商品數據等關鍵指標"
+  enableZoom={true}
+  enableDownload={true}
+  enableFullscreen={true}
+/>
+
+| 元件 | 說明 | 常用操作 |
+|------|------|----------|
+| 更新時間 | 顯示最後同步時間（例：2025-07-18 13:22:23）。 | 點擊右側 🔄 立即更新 |
+| 重點關注指標 | 4 枚指標卡：線下設備 1 台 \| 線上平台 0 台 \| 總銷商品 0 項 \| 處方單數 0 張 | 點擊任一指標 → 進入詳細清單 |
+| 設備商品數據 | 總貨道數量 20 \| 已使用貨道 8 \| 貨道總容量 200 \| 商品總數量 8 | 快速查看 |
+
+### 待處理事項
+
+<EnhancedImage
+  src="pages/getting-started/dashboard-pending-tasks.jpg"
+  alt="待處理事項區塊"
+  width={800}
+  height={200}
+  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+  caption="待處理事項以圖示和文字呈現，紅點提示代表有待辦"
+  enableZoom={true}
+  enableDownload={true}
+  enableFullscreen={true}
+/>
+
+<Note>
+  **重要提醒**：本模塊為後台加盟主提供資訊查閱用途，請勿對告警內容進行任何操作，否則將自行承擔一切後果與風險。
+</Note>
+
+待出貨、待退款、庫存預警、過期／即期商品以圖示 + 文字呈現；紅點提示代表有待辦。點擊「查看更多」進入工作清單進行批次處理。
+
+### 營運數據對比
+
+<EnhancedImage
+  src="pages/getting-started/dashboard-business-data.jpg"
+  alt="營運數據對比卡片"
+  width={800}
+  height={300}
+  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+  caption="營運數據對比顯示支付金額、訂單數量、商品數量和銷售利潤"
+  enableZoom={true}
+  enableDownload={true}
+  enableFullscreen={true}
+/>
+
+1. **周期篩選**：右側可切換日／週／月／自定義。
+2. **整體看板**（四格卡片）：
+   - 支付金額 100.00
+   - 訂單數量 1筆
+   - 商品數量 1件
+   - 銷售利潤 30.00
+3. 卡片底部顯示「比昨日增減」與「環比」；紅色箭頭↗代表數值上升。
+
+## 常見操作情境
+
+| 情境 | 步驟 |
+|------|------|
+| 查看最新設備狀態 | 首頁→ 實時概況卡→ 點擊 🔄 |
+| 查看待處理事項 | 首頁→ 待處理事項→ 點擊查看更多 |
+| 切換數據時間範圍 | 首頁→ 營運數據對比→ 選擇日/週/月 |
+| 進入訂單管理 | 左側導覽→ 訂單管理→ 訂單列表 |
+| 展開/收合選單 | 點擊左上角「≡」圖示 |
+
+## 儀表板使用技巧
+
+### 日常檢查流程
+1. **登入系統**：使用您的加盟主帳號登入
+2. **查看實時概況**：檢查設備狀態和關鍵指標
+3. **關注待處理事項**：查看是否有需要關注的告警
+4. **檢視營運數據**：了解最新的銷售表現
+5. **進入詳細功能**：根據需要進入訂單管理等功能
+
+### 快速操作技巧
+- **快速刷新數據**：點擊實時概況卡右側的刷新按鈕
+- **切換時間範圍**：在營運數據區域選擇不同的時間週期
+- **展開選單**：點擊左上角漢堡圖示展開完整功能選單
+- **快速導航**：使用頁面標籤快速切換不同頁面
+
+<Tip>
+  **使用建議**：建議您每日登入系統查看儀表板資訊，特別關注設備離線狀況和待處理事項，這有助於及時發現問題並保持業務正常運行。
+</Tip>
+
+<Note>
+  **系統更新**：儀表板功能將持續優化，新功能將陸續開放。請關注系統公告，了解最新功能更新資訊。
+</Note>

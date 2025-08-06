@@ -1,93 +1,109 @@
 export const metadata = {
   title: '商品管理',
   description:
-    '管理 AMIGO 自動販賣機中的所有商品，包括商品上架、庫存管理、價格設定、商品分類等功能，優化商品銷售表現。',
+    'AMIGO 自動販賣機商品管理說明。鑑於本公司統籌負責商品供應等全流程作業，商品管理模組目前暫不對加盟主開放，所有商品作業由總公司代為處理。',
 }
 
 # 商品管理
 
-管理 AMIGO 自動販賣機中的所有商品，包括商品上架、庫存管理、價格設定、商品分類等功能，優化商品銷售表現。
+<Note>
+  **重要說明**：鑑於本公司統籌負責自動販賣機之製造、安裝、物流及商品供應等全流程作業，故「商品管理」模組目前暫不對加盟主開放。
 
-## 功能概覽
+  惟為利代理商全面理解本公司之營運架構與業務邏輯，特將該模組保留於系統介面中，以利日後整體協作及溝通之順暢。
+</Note>
 
-商品管理模塊幫助您全面管理販賣機商品：
+## 商品管理架構說明
 
-- **商品資訊管理**：維護完整的商品資料庫
-- **庫存控制**：即時監控和管理庫存水平
-- **價格策略**：靈活的價格設定和調整
-- **銷售分析**：基於數據的商品優化建議
+為了讓您更好地理解 AMIGO 商品管理體系，以下說明我們的商品管理架構：
 
-## 主要功能
+### 商品庫與商品池概念
 
-### 庫存管理
+#### （一）商品庫（Master Product Library）
 
-即時監控和管理所有商品的庫存狀態：
+由總公司統一建立與維護，涵蓋所有經授權可販售商品的主檔資料。每項商品皆具有：
+- **唯一 SKU**：商品的唯一識別碼
+- **商品名稱**：完整的商品名稱和描述
+- **建議售價**：總公司制定的標準售價
+- **商品圖片**：高品質的商品展示圖片
+- **規格資訊**：商品的詳細規格和特性
+- **供應商資訊**：商品來源和供應鏈資訊
 
-- **即時庫存**：查看各設備的商品庫存數量
-- **庫存警報**：低庫存自動提醒
-- **補貨計劃**：智能補貨建議
-- **庫存歷史**：庫存變動記錄和分析
+#### （二）您的商品池（Your Product Pool）
 
-<div className="not-prose">
-  <Button href="/product-management/inventory" variant="text" arrow="right">
-    <>管理商品庫存</>
-  </Button>
-</div>
+總公司會根據合作範圍，從主商品庫中授權特定商品給您。所有商品的設定、內容更新與上架作業皆由總公司代為處理，加盟商無須進行任何商品維護或上架操作，可專注於銷售與日常營運。
 
-### 價格管理
+**商品池特色**：
+- 根據您的合作協議範圍授權
+- 商品資訊由總公司統一維護
+- 價格策略由總公司統一制定
+- 商品上下架由總公司統一管理
 
-靈活設定和調整商品價格：
+## 商品配置流程說明
 
-- **基礎價格**：設定商品的標準售價
-- **促銷價格**：設定限時優惠價格
-- **批量調價**：同時調整多個商品價格
-- **價格歷史**：價格變動記錄和效果分析
+### 如何將商品配置到指定販賣機
 
-<div className="not-prose">
-  <Button href="/product-management/pricing" variant="text" arrow="right">
-    <>管理商品價格</>
-  </Button>
-</div>
+此操作為總公司日常營運的核心流程之一，也常被稱為「商品上架」或「貨道配置」。**僅限總公司人員執行，加盟主無需處理此項作業。**
 
-### 商品分類
+**標準配置流程**：
+1. **進入指定設備**：總公司人員進入指定設備的「單機詳情」頁面
+2. **選擇貨道配置**：找到「貨道配置」或類似名稱的區塊
+3. **配置商品**：點擊想配置的貨道編號，系統會彈出「商品池」
+4. **選擇商品**：從商品池中選擇要上架的商品
+5. **設定參數**：為該商品在此貨道設定「售價」與「容量」
+6. **儲存設定**：完成配置並儲存
+7. **重複配置**：重複此步驟，直到完成所有貨道的配置
 
-組織和管理商品分類結構：
+### 價格策略設定
 
-- **分類管理**：創建和編輯商品分類
-- **商品歸類**：將商品分配到適當分類
-- **分類排序**：調整分類在設備上的顯示順序
-- **分類分析**：各分類的銷售表現分析
+**僅限總公司人員執行，加盟主無需處理此項作業。**
 
-<div className="not-prose">
-  <Button href="/product-management/categories" variant="text" arrow="right">
-    <>管理商品分類</>
-  </Button>
-</div>
+為簡化管理，系統通常支持「價格範本」功能：
+- **創建價格範本**：總公司可以創建多個價格範本
+- **批次價格設定**：在範本中為一系列商品設定好價格
+- **範本應用**：將整個範本應用到一台或多台設備上
+- **快速調整**：實現快速、批次的價格調整
 
-## 商品狀態說明
+**價格策略考量因素**：
+- 商品成本和利潤率
+- 市場競爭狀況
+- 地點和客群特性
+- 季節性需求變化
 
-### 正常銷售 🟢
-商品庫存充足，正常對外銷售。
+## 加盟主可查看的商品資訊
 
-### 庫存不足 🟡
-商品庫存低於安全水平，需要及時補貨：
-- 建議補貨數量會自動計算
-- 系統會發送補貨提醒
-- 可設定自動補貨規則
+雖然商品管理操作由總公司負責，但加盟主仍可透過系統查看相關商品資訊：
 
-### 缺貨 🔴
-商品庫存為零，無法銷售：
-- 設備上會顯示「售完」
-- 需要立即安排補貨
-- 會影響銷售收入
+### 商品基本資訊
+- **商品名稱和描述**：了解販售的商品內容
+- **商品分類**：商品的分類歸屬
+- **售價資訊**：當前的販售價格
+- **商品圖片**：商品的展示圖片
 
-### 停售 ⚫
-商品暫停銷售：
-- 商品下架或季節性停售
-- 設備上不會顯示該商品
-- 可隨時恢復銷售
+### 庫存狀態查看
+- **即時庫存**：各設備的商品庫存數量
+- **庫存預警**：低庫存或缺貨提醒
+- **補貨需求**：需要補貨的商品清單
+- **庫存歷史**：庫存變動記錄
+
+### 銷售數據查看
+- **銷售排行**：熱銷商品排名
+- **銷售趨勢**：商品銷售趨勢分析
+- **收入貢獻**：各商品的收入貢獻度
+- **客戶偏好**：客戶購買偏好分析
 
 ## 商品操作流程
+
+商品管理的完整操作流程包含以下步驟：
+
+1. **新增商品**：輸入基本資訊、分類和價格
+2. **庫存設定**：設定初始庫存和安全庫存水平
+3. **設備分配**：選擇要上架的販賣機設備
+4. **上架確認**：檢查所有設定並完成上架
+5. **監控管理**：持續監控銷售和庫存狀態
+
+<Note>
+  **流程圖片**：商品管理流程圖片將在後續版本中添加，目前請參考上述文字說明進行操作。
+</Note>
 
 ### 新增商品
 1. **基本資訊**：輸入商品名稱、編號、描述
@@ -173,6 +189,146 @@ export const metadata = {
 4. 小範圍測試新價格
 5. 全面推廣有效的價格策略
 
+---
+
+## 熱銷商品功能
+
+### 熱銷商品標準
+
+<div className="not-prose mb-6">
+  <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-red-600 dark:text-red-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-red-800 dark:text-red-200 mb-3">熱銷商品認定標準</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-red-200 dark:border-red-700">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="flex-shrink-0">
+              <div className="w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                <span className="text-red-600 dark:text-red-400 font-bold text-sm">100</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-medium text-red-900 dark:text-red-100">銷售數量門檻</h4>
+              <p className="text-sm text-red-800 dark:text-red-200">
+                商品累計銷售數量達到 <strong>100份</strong> 時，系統將自動標記為熱銷商品
+              </p>
+            </div>
+          </div>
+
+          <div className="border-t border-red-100 dark:border-red-800 pt-3">
+            <h4 className="font-medium text-red-900 dark:text-red-100 mb-2">熱銷商品特色</h4>
+            <ul className="text-sm text-red-800 dark:text-red-200 space-y-1">
+              <li>• 系統自動識別並標記熱銷標籤</li>
+              <li>• 在商品列表中優先顯示</li>
+              <li>• 提供專門的熱銷商品報表</li>
+              <li>• 可作為補貨優先級參考</li>
+              <li>• 支援熱銷商品趨勢分析</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 熱銷商品管理功能
+
+<div className="not-prose mb-6">
+  <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-orange-600 dark:text-orange-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-orange-800 dark:text-orange-200 mb-3">熱銷商品列表功能</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">查看功能</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 熱銷商品專屬列表頁面</li>
+              <li>• 按銷售數量排序顯示</li>
+              <li>• 顯示累計銷售數量</li>
+              <li>• 顯示銷售趨勢圖表</li>
+              <li>• 支援時間範圍篩選</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">分析功能</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 熱銷商品銷售趨勢分析</li>
+              <li>• 不同設備熱銷商品對比</li>
+              <li>• 熱銷商品利潤貢獻分析</li>
+              <li>• 熱銷商品庫存週轉率</li>
+              <li>• 熱銷商品季節性分析</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 熱銷商品運營建議
+
+<Tip>
+  **運營策略**：熱銷商品是您業務的核心驅動力。建議優先確保熱銷商品的庫存充足，並考慮在顯眼位置展示這些商品，以最大化銷售效果。
+</Tip>
+
+<div className="not-prose mb-6">
+  <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-green-600 dark:text-green-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-green-800 dark:text-green-200 mb-3">運營優化建議</h3>
+        <div className="space-y-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">庫存管理</h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• 優先補充熱銷商品庫存</li>
+              <li>• 設定熱銷商品的安全庫存量</li>
+              <li>• 建立熱銷商品的快速補貨機制</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">商品配置</h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• 將熱銷商品放置在顯眼的貨道位置</li>
+              <li>• 考慮增加熱銷商品的貨道數量</li>
+              <li>• 定期檢視熱銷商品的價格策略</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">數據分析</h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• 定期分析熱銷商品的銷售模式</li>
+              <li>• 識別潛在的新熱銷商品</li>
+              <li>• 監控熱銷商品的競爭狀況</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <Note>
-  商品管理的成功關鍵在於持續監控和優化。建議定期檢視商品表現，及時調整策略。
+  **權限說明**：商品管理功能目前由總公司統一管理。加盟主可以查看熱銷商品資訊和相關分析報表，但商品的上架、下架和價格調整需要通過總公司進行。
+</Note>
+
+<Note>
+  商品管理的成功關鍵在於持續監控和優化。建議定期檢視商品表現，特別關注熱銷商品的趨勢變化，及時調整策略以維持競爭優勢。
 </Note>

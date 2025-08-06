@@ -99,7 +99,7 @@ export default function QRCodeGenerator() {
     { name: '網站連結', value: 'https://amigo-helpcenter.github.io' },
   ]
 
-  const useTemplate = (template: string) => {
+  const applyTemplate = (template: string) => {
     setText(template)
   }
 
@@ -128,7 +128,7 @@ export default function QRCodeGenerator() {
           {templates.map((template, index) => (
             <button
               key={index}
-              onClick={() => useTemplate(template.value)}
+              onClick={() => applyTemplate(template.value)}
               className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-200"
             >
               {template.name}

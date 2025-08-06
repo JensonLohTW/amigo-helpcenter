@@ -72,7 +72,7 @@ export const Header = forwardRef<
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
             <TopLevelNavItem href="/">操作手冊</TopLevelNavItem>
-            <TopLevelNavItem href="/quickstart">快速開始</TopLevelNavItem>
+
             <TopLevelNavItem href="/support">技術支援</TopLevelNavItem>
           </ul>
         </nav>
@@ -82,7 +82,7 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="/getting-started">系統登入</Button>
+          <Button href="https://usa.impressiot.com/xpmweb/login">系統登入</Button>
         </div>
       </div>
     </motion.div>

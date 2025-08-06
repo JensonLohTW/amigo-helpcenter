@@ -4,10 +4,22 @@ import Link from 'next/link'
 import { Feedback } from '@/components/Feedback'
 import { Heading } from '@/components/Heading'
 import { Prose } from '@/components/Prose'
+import { Image } from '@/components/Image'
+import { ImageGallery, ImageComparison, ImageWithSteps } from '@/components/ImageGallery'
+import QuickPasswordButton from '@/components/QuickPasswordButton'
+import EnhancedImage from '@/components/EnhancedImage'
 
 export const a = Link
 export { Button } from '@/components/Button'
 export { CodeGroup, Code as code, Pre as pre } from '@/components/Code'
+
+// 導出圖片相關組件供 MDX 使用
+export { Image }
+export { ImageGallery, ImageComparison, ImageWithSteps }
+
+// 導出工具組件供 MDX 使用
+export { default as QuickPasswordButton } from '@/components/QuickPasswordButton'
+export { default as EnhancedImage } from '@/components/EnhancedImage'
 
 export function wrapper({ children }: { children: React.ReactNode }) {
   return (
@@ -42,10 +54,39 @@ function InfoIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function TipIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" {...props}>
+      <path
+        fillRule="evenodd"
+        d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+        clipRule="evenodd"
+      />
+      <path
+        fillRule="evenodd"
+        d="M8.25 3.75a.75.75 0 00-1.5 0v.5a.75.75 0 001.5 0v-.5zm0 2.5a.75.75 0 00-1.5 0v4a.75.75 0 001.5 0v-4z"
+        clipRule="evenodd"
+      />
+      <circle cx="8" cy="12" r=".75" />
+    </svg>
+  )
+}
+
 export function Note({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-6 flex gap-2.5 rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4 text-sm/6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/5 dark:text-emerald-200 dark:[--tw-prose-links-hover:var(--color-emerald-300)] dark:[--tw-prose-links:var(--color-white)]">
       <InfoIcon className="mt-1 h-4 w-4 flex-none fill-emerald-500 stroke-white dark:fill-emerald-200/20 dark:stroke-emerald-200" />
+      <div className="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export function Tip({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-6 flex gap-2.5 rounded-2xl border border-blue-500/20 bg-blue-50/50 p-4 text-sm/6 text-blue-900 dark:border-blue-500/30 dark:bg-blue-500/5 dark:text-blue-200 dark:[--tw-prose-links-hover:var(--color-blue-300)] dark:[--tw-prose-links:var(--color-white)]">
+      <TipIcon className="mt-1 h-4 w-4 flex-none fill-blue-500 stroke-white dark:fill-blue-200/20 dark:stroke-blue-200" />
       <div className="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
         {children}
       </div>

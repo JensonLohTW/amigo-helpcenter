@@ -4,7 +4,7 @@ import { type Metadata } from 'next'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { type Section } from '@/components/SectionProvider'
-import FloatingToolbar from '@/components/FloatingToolbar'
+import ToolManager from '@/components/ToolManager'
 
 import '@/styles/tailwind.css'
 
@@ -58,10 +58,10 @@ export default async function RootLayout({
   let allSectionsEntries = (await Promise.all(
     pages.map(async (filename) => {
       try {
-        const module = await import(`./${filename}`)
+        const moduleImport = await import(`./${filename}`)
         return [
           '/' + filename.replace(/(^|\/)page\.mdx$/, ''),
-          module.sections || [],
+          moduleImport.sections || [],
         ]
       } catch (error) {
         console.warn(`Failed to import sections from ${filename}:`, error)
@@ -80,7 +80,7 @@ export default async function RootLayout({
         <Providers>
           <div className="w-full">
             <Layout allSections={allSections}>{children}</Layout>
-            <FloatingToolbar />
+            <ToolManager />
           </div>
         </Providers>
       </body>

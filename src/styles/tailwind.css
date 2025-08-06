@@ -2,6 +2,7 @@
 @plugin '@tailwindcss/typography';
 @config '../../typography.ts';
 @custom-variant dark (&:where(.dark, .dark *));
+@import './floating-toolbar.css';
 
 @theme {
   --text-2xs: 0.75rem;

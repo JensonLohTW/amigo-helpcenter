@@ -187,6 +187,221 @@ export const metadata = {
 - 保持多個備份副本
 - 異地備份重要數據
 
+---
+
+## 使用者與權限管理
+
+### 權限架構說明
+
+<div className="not-prose mb-6">
+  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200 mb-3">AMIGO 權限管理體系</h3>
+        <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
+          為確保系統穩定運行與使用者操作一致性，AMIGO 系統採用分層權限管理機制，不同角色擁有不同的功能訪問權限。
+        </p>
+
+        <div className="space-y-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">總公司管理員</h4>
+            </div>
+            <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
+              <li>• 完整系統管理權限</li>
+              <li>• 商品管理（上架、下架、價格設定）</li>
+              <li>• 設備管理（配置、維護、監控）</li>
+              <li>• 用戶權限管理</li>
+              <li>• 系統設定與維護</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h4 className="font-medium text-blue-900 dark:text-blue-100">加盟主（您）</h4>
+            </div>
+            <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
+              <li>• 儀表板查看權限</li>
+              <li>• 訂單管理（查詢、處理、退款）</li>
+              <li>• 財務報表查看（基礎報表）</li>
+              <li>• 設備狀態監控（唯讀）</li>
+              <li>• 帳戶設定管理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 目前開放功能模組
+
+<div className="not-prose mb-6">
+  <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-green-600 dark:text-green-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-green-800 dark:text-green-200 mb-3">加盟主可用功能清單</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2 flex items-center">
+              <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              已開放功能
+            </h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• <strong>首頁儀表板</strong> - 營運數據總覽</li>
+              <li>• <strong>訂單管理</strong> - 訂單查詢與處理</li>
+              <li>• <strong>交易流水</strong> - 交易記錄查詢</li>
+              <li>• <strong>基礎財務報表</strong> - 營收統計</li>
+              <li>• <strong>帳戶設定</strong> - 密碼修改等</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <h4 className="font-medium text-green-900 dark:text-green-100 mb-2 flex items-center">
+              <svg className="w-4 h-4 text-orange-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              未來開放功能
+            </h4>
+            <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+              <li>• <strong>設備管理</strong> - 設備監控與配置</li>
+              <li>• <strong>進階報表</strong> - 詳細數據分析</li>
+              <li>• <strong>庫存管理</strong> - 庫存監控功能</li>
+              <li>• <strong>客戶管理</strong> - 客戶資料管理</li>
+              <li>• <strong>行銷工具</strong> - 促銷活動管理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 權限釋放原則
+
+<div className="not-prose mb-6">
+  <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-orange-600 dark:text-orange-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-orange-800 dark:text-orange-200 mb-3">功能開放策略</h3>
+        <div className="space-y-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">階段性開放</h4>
+            <p className="text-sm text-orange-800 dark:text-orange-200 mb-2">
+              功能模組將視實際業務需求與系統研發進度，採階段性逐步開放：
+            </p>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• <strong>第一階段</strong>：核心營運功能（已完成）</li>
+              <li>• <strong>第二階段</strong>：設備監控與管理功能</li>
+              <li>• <strong>第三階段</strong>：進階分析與報表功能</li>
+              <li>• <strong>第四階段</strong>：客戶管理與行銷工具</li>
+            </ul>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-orange-200 dark:border-orange-700">
+            <h4 className="font-medium text-orange-900 dark:text-orange-100 mb-2">開放條件</h4>
+            <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
+              <li>• 系統穩定性驗證完成</li>
+              <li>• 用戶培訓與文檔準備就緒</li>
+              <li>• 技術支援體系完善</li>
+              <li>• 業務流程標準化完成</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### 權限申請流程
+
+<Tip>
+  **申請建議**：如果您有特定的業務需求需要使用尚未開放的功能，可以通過以下流程提出申請。我們會根據實際情況評估並提供解決方案。
+</Tip>
+
+<div className="not-prose mb-6">
+  <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-6">
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0">
+        <svg className="w-6 h-6 text-purple-600 dark:text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-lg font-medium text-purple-800 dark:text-purple-200 mb-3">特殊權限申請流程</h3>
+        <div className="space-y-3">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+            <div>
+              <h4 className="font-medium text-purple-900 dark:text-purple-100">提交申請</h4>
+              <p className="text-sm text-purple-800 dark:text-purple-200">
+                透過指定聯絡窗口或客戶經理提交權限申請，詳細說明業務需求。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+            <div>
+              <h4 className="font-medium text-purple-900 dark:text-purple-100">需求評估</h4>
+              <p className="text-sm text-purple-800 dark:text-purple-200">
+                總公司技術團隊評估申請的合理性、可行性和安全性。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+            <div>
+              <h4 className="font-medium text-purple-900 dark:text-purple-100">審核決定</h4>
+              <p className="text-sm text-purple-800 dark:text-purple-200">
+                根據評估結果決定是否批准，並制定相應的實施計劃。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+            <div>
+              <h4 className="font-medium text-purple-900 dark:text-purple-100">權限配置</h4>
+              <p className="text-sm text-purple-800 dark:text-purple-200">
+                批准後進行系統配置，並提供相應的培訓和文檔支援。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <Note>
-  系統設定的變更可能會影響整個系統的運行。建議在進行重要設定變更前，先在測試環境中驗證，並做好數據備份。
+  系統設定的變更可能會影響整個系統的運行。建議在進行重要設定變更前，先在測試環境中驗證，並做好數據備份。如有權限相關問題，請聯繫您的專屬客戶經理或技術支援團隊。
 </Note>

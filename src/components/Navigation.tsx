@@ -296,11 +296,12 @@ function NavigationGroup({
 
 export const navigation: Array<NavGroup> = [
   {
-    title: '快速開始',
+    title: '系統入門',
     icon: NavigationIcons.quickstart,
     links: [
       { title: '系統登入與基本操作', href: '/getting-started' },
-      { title: '快速開始指南', href: '/quickstart' },
+      { title: '儀表板介紹', href: '/dashboard' },
+      { title: '使用條款與政策', href: '/terms-and-policies' },
     ],
   },
   {
@@ -333,13 +334,13 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: '財務報表',
+    title: '財務與報表中心',
     icon: NavigationIcons.financial,
     links: [
-      { title: '財務報表概覽', href: '/financial-reports' },
-      { title: '營收統計', href: '/financial-reports/revenue' },
-      { title: '成本分析', href: '/financial-reports/costs' },
-      { title: '利潤報表', href: '/financial-reports/profit' },
+      { title: '財務與報表概覽', href: '/financial-reports' },
+      { title: '交易流水查詢', href: '/financial-reports/revenue' },
+      { title: '銷售數據報表', href: '/financial-reports/costs' },
+      { title: '分潤與結算', href: '/financial-reports/profit' },
     ],
   },
   {
@@ -367,7 +368,6 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
     <nav {...props}>
       <ul role="list">
         <TopLevelNavItem href="/">操作手冊</TopLevelNavItem>
-        <TopLevelNavItem href="/quickstart">快速開始</TopLevelNavItem>
         <TopLevelNavItem href="/support">技術支援</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
