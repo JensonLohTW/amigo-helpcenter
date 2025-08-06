@@ -10,8 +10,8 @@ export const metadata = {
 
 export const sections = [
   { title: '快速開始', id: 'getting-started' },
-  { title: '核心功能', id: 'core-features' },
-  { title: '常見問題', id: 'faq' },
+  { title: '操作指南', id: 'guides' },
+  { title: '相關資源', id: 'resources' },
   { title: '技術支援', id: 'support' },
 ]
 
@@ -19,23 +19,23 @@ export const sections = [
 
 # AMIGO 幫助中心
 
-歡迎使用 AMIGO 自動販賣機後台系統！本操作手冊將引導您快速掌握系統的各項功能，從基礎的登入操作到進階的數據分析，讓您輕鬆管理您的自動販賣機業務。 {{ className: 'lead' }}
+歡迎使用 AMIGO 自動販賣機後台系統！本操作手冊將引導您快速掌握系統的各項功能，從基礎的登入操作到進階的數據分析，讓您輕鬆管理您的自動販賣機業務。
 
 <div className="not-prose mt-6 mb-16 flex gap-3">
-  <Button href="/quickstart" arrow="right">
+  <Button href="/getting-started" arrow="right">
     <>快速開始</>
   </Button>
-  <Button href="/authentication" variant="outline">
-    <>系統登入</>
+  <Button href="/quickstart" variant="outline">
+    <>操作指南</>
   </Button>
 </div>
 
-## 開始使用 {{ anchor: false }}
+## 開始使用
 
-首次使用系統？請先閱讀我們的[快速開始指南](/quickstart)，了解如何登入系統並熟悉基本操作。如果您已經是經驗豐富的用戶，可以直接跳轉到您需要的功能模塊。 {{ className: 'lead' }}
+首次使用系統？請先閱讀我們的[系統登入指南](/getting-started)，了解如何登入系統並熟悉基本操作。如果您已經是經驗豐富的用戶，可以直接跳轉到您需要的功能模塊。
 
 <div className="not-prose">
-  <Button href="/authentication" variant="text" arrow="right">
+  <Button href="/getting-started" variant="text" arrow="right">
     <>立即開始</>
   </Button>
 </div>
@@ -43,3 +43,17 @@ export const sections = [
 <Guides />
 
 <Resources />
+
+## 需要幫助？
+
+如果您在使用過程中遇到任何問題，我們提供多種支援管道：
+
+- **常見問題**：查看 [FAQ](/support/faq) 獲得常見問題的快速解答
+- **技術支援**：通過 [聯絡我們](/support/contact) 獲得專業技術協助
+- **操作指南**：參考詳細的 [快速開始指南](/getting-started) 學習系統操作
+
+<div className="not-prose">
+  <Button href="/support" variant="text" arrow="right">
+    <>獲得支援</>
+  </Button>
+</div>

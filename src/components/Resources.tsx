@@ -28,11 +28,11 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: '/contacts',
-    name: 'Contacts',
+    href: '/order-management',
+    name: '訂單管理',
     description:
-      'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-    icon: UserIcon,
+      '學習如何處理客戶訂單、退款申請和訂單統計分析。',
+    icon: EnvelopeIcon,
     pattern: {
       y: 16,
       squares: [
@@ -42,11 +42,11 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/conversations',
-    name: 'Conversations',
+    href: '/system-settings',
+    name: '系統設定',
     description:
-      'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-    icon: ChatBubbleIcon,
+      '了解如何管理帳戶資訊、用戶權限和系統參數配置。',
+    icon: UserIcon,
     pattern: {
       y: -6,
       squares: [
@@ -56,11 +56,11 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/messages',
-    name: 'Messages',
+    href: '/support/faq',
+    name: '常見問題',
     description:
-      'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-    icon: EnvelopeIcon,
+      '查看系統操作、設備管理和商品管理的常見問題解答。',
+    icon: ChatBubbleIcon,
     pattern: {
       y: 32,
       squares: [
@@ -70,10 +70,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/groups',
-    name: 'Groups',
+    href: '/support/contact',
+    name: '技術支援',
     description:
-      'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
+      '聯絡 AMIGO 技術支援團隊，獲得專業的技術協助。',
     icon: UsersIcon,
     pattern: {
       y: 22,
@@ -174,7 +174,7 @@ export function Resources() {
   return (
     <div className="my-16 xl:max-w-none">
       <Heading level={2} id="resources">
-        Resources
+        相關資源
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
         {resources.map((resource) => (

@@ -90,7 +90,14 @@ export default function Search(nextConfig = {}) {
                   resolution: 9,
                   depth: 2,
                   bidirectional: true
-                }
+                },
+                // 優化中文搜索
+                charset: 'latin:extra',
+                language: 'zh',
+                // 提高搜索精度
+                threshold: 0,
+                // 支援模糊搜索
+                fuzzy: 0.2
               })
 
               let data = ${JSON.stringify(data)}
@@ -108,17 +115,36 @@ export default function Search(nextConfig = {}) {
 
               export function search(query, options = {}) {
                 let result = sectionIndex.search(query, {
-                  ...options,
+                  limit: options.limit || 10,
                   enrich: true,
+                  // 提高搜索品質
+                  suggest: true,
+                  ...options,
                 })
                 if (result.length === 0) {
                   return []
                 }
-                return result[0].result.map((item) => ({
+
+                // 對結果進行排序和去重
+                let items = result[0].result.map((item) => ({
                   url: item.id,
                   title: item.doc.title,
                   pageTitle: item.doc.pageTitle,
+                  score: item.score || 0,
                 }))
+
+                // 按分數排序，分數越高越相關
+                items.sort((a, b) => b.score - a.score)
+
+                // 去除重複的URL
+                let seen = new Set()
+                return items.filter(item => {
+                  if (seen.has(item.url)) {
+                    return false
+                  }
+                  seen.add(item.url)
+                  return true
+                })
               }
             `
           }),

@@ -3,26 +3,24 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/authentication',
-    name: 'Authentication',
-    description: 'Learn how to authenticate your API requests.',
+    href: '/getting-started',
+    name: '系統登入',
+    description: '了解如何登入 AMIGO 後台系統並熟悉基本操作介面。',
   },
   {
-    href: '/pagination',
-    name: 'Pagination',
-    description: 'Understand how to work with paginated responses.',
+    href: '/device-management',
+    name: '設備管理',
+    description: '學習如何監控和管理您的自動販賣機設備。',
   },
   {
-    href: '/errors',
-    name: 'Errors',
-    description:
-      'Read about the different types of errors returned by the API.',
+    href: '/product-management',
+    name: '商品管理',
+    description: '掌握商品上架、庫存管理和價格設定的操作方法。',
   },
   {
-    href: '/webhooks',
-    name: 'Webhooks',
-    description:
-      'Learn how to programmatically configure webhooks for your app.',
+    href: '/financial-reports',
+    name: '財務報表',
+    description: '了解如何查看和分析營收、成本和利潤數據。',
   },
 ]
 
@@ -30,7 +28,7 @@ export function Guides() {
   return (
     <div className="my-16 xl:max-w-none">
       <Heading level={2} id="guides">
-        Guides
+        操作指南
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
         {guides.map((guide) => (
@@ -43,7 +41,7 @@ export function Guides() {
             </p>
             <p className="mt-4">
               <Button href={guide.href} variant="text" arrow="right">
-                Read more
+                了解更多
               </Button>
             </p>
           </div>

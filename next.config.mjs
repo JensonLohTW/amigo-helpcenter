@@ -22,13 +22,13 @@ const nextConfig = {
   // 頁面擴展名配置
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
 
-  // 靜態導出配置 (用於 GitHub Pages)
-  output: 'export',
-
-  // 禁用圖片優化 (靜態導出不支援)
-  images: {
-    unoptimized: true,
-  },
+  // 靜態導出配置 (僅在生產環境使用)
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    images: {
+      unoptimized: true,
+    },
+  }),
 
   // GitHub Pages 路徑配置
   basePath: isGithubPages && repoName ? `/${repoName}` : '',

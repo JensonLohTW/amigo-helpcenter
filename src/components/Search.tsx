@@ -57,7 +57,7 @@ function useAutocomplete({ onNavigate }: { onNavigate: () => void }) {
       React.KeyboardEvent
     >({
       id,
-      placeholder: 'Find something...',
+      placeholder: '搜索操作手冊...',
       defaultActiveItemId: 0,
       onStateChange({ state }) {
         setAutocompleteState(state)
@@ -74,7 +74,7 @@ function useAutocomplete({ onNavigate }: { onNavigate: () => void }) {
             {
               sourceId: 'documentation',
               getItems() {
-                return search(query, { limit: 5 })
+                return search(query, { limit: 8 })
               },
               getItemUrl({ item }) {
                 return item.url
@@ -235,11 +235,11 @@ function SearchResults({
       <div className="p-6 text-center">
         <NoResultsIcon className="mx-auto h-5 w-5 stroke-zinc-900 dark:stroke-zinc-600" />
         <p className="mt-2 text-xs text-zinc-700 dark:text-zinc-400">
-          Nothing found for{' '}
+          沒有找到關於{' '}
           <strong className="font-semibold break-words text-zinc-900 dark:text-white">
-            &lsquo;{query}&rsquo;
+            「{query}」
           </strong>
-          . Please try again.
+          的結果，請嘗試其他關鍵詞。
         </p>
       </div>
     )
@@ -475,7 +475,7 @@ export function MobileSearch() {
       <button
         type="button"
         className="relative flex size-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 lg:hidden dark:hover:bg-white/5"
-        aria-label="Find something..."
+        aria-label="搜索操作手冊..."
         {...buttonProps}
       >
         <span className="absolute size-12 pointer-fine:hidden" />
